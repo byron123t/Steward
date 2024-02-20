@@ -182,10 +182,16 @@ def modify_response(page: Page, route):
 
 def exploration(context, page: Page, url):
     network = Network(page)
+    if url.startswith('https://') or url.startswith('http://'):
+        pass
+    elif not url.startswith('https://'):
+        url = 'https://{}'.format(url)
+    elif not url.startswith('http://'):
+        url = 'http://{}'.format(url)
     try:
-        page.goto('https://{}'.format(url), wait_until='networkidle')
+        page.goto(url, wait_until='networkidle')
     except Exception as e:
-        page.goto('https://{}'.format(url))
+        page.goto(url)
     try:
         page.wait_for_load_state('networkidle', timeout=2000)
     except Exception as e:
@@ -226,19 +232,27 @@ def interact(tag, page: Page, action, PATH_NUM, param2=None):
     return get_html(page), get_all_interactables(page), network.get_traffic()
 
 
-def interact_new_page(context, tag, action, PATH_NUM):
+def interact_new_page(context, tag, page: Page, action, PATH_NUM, param2=None):
     try:
         with context.expect_page() as new_page_info:
-            action(interactable=tag)
+            if action == type_text or action == drag or action == type_submit or action == check or action == select or action == exploration or action == upload_file:
+                action(tag, param2)
+            elif action == click:
+                action(page, tag)
+            else:
+                action(tag)
         new_page = new_page_info.value
         network = Network(new_page)
-        network.store_network(new_page)
     except Exception as e:
         with context.expect_page() as new_page_info:
-            action(interactable=tag)
+            if action == type_text or action == drag or action == type_submit or action == check or action == select or action == exploration or action == upload_file:
+                action(tag, param2)
+            elif action == click:
+                action(page, tag)
+            else:
+                action(tag)
         new_page = new_page_info.value
         network = Network(new_page)
-        network.store_network(new_page)
     try:
         new_page.wait_for_load_state('networkidle')
     except Exception as e:
@@ -257,23 +271,24 @@ def get_html(page: Page):
 
 def get_all_interactables(page: Page):
     interactables = []
-    interactables.append(page.locator('button'))
-    interactables.append(page.locator('a'))
-    interactables.append(page.locator('input'))
-    interactables.append(page.locator('select'))
-    interactables.append(page.locator('textarea'))
-    interactables.append(page.locator('[role*="{}"]'.format('radio')))
-    interactables.append(page.locator('[role*="{}"]'.format('option')))
-    interactables.append(page.locator('[role*="{}"]'.format('checkbox')))
-    interactables.append(page.locator('[role*="{}"]'.format('button')))
-    interactables.append(page.locator('[role*="{}"]'.format('tab')))
-    interactables.append(page.locator('[role*="{}"]'.format('textbox')))
-    interactables.append(page.locator('[role*="{}"]'.format('link')))
-    interactables.append(page.locator('[role*="{}"]'.format('menuitem')))
-    interactables.append(page.locator('[role*="{}"]'.format('tabpanel')))
-    interactables.append(page.locator('[href]'))
-    interactables.append(page.locator('[aria-controls]'))
-    interactables.append(page.locator('[aria-label]'))
+    interactables.append(page.locator('button:visible'))
+    interactables.append(page.locator('a:visible'))
+    interactables.append(page.locator('input:visible'))
+    interactables.append(page.locator('select:visible'))
+    interactables.append(page.locator('textarea:visible'))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('radio')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('option')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('checkbox')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('button')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('tab')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('textbox')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('link')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('menuitem')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('tabpanel')))
+    interactables.append(page.locator('[onclick]:visible'))
+    interactables.append(page.locator('[href]:visible'))
+    interactables.append(page.locator('[aria-controls]:visible'))
+    interactables.append(page.locator('[aria-label]:visible'))
     
     return interactables
 

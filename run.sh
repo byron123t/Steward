@@ -13,4 +13,10 @@
 
 # python smart_runtime.py --url resy.com --task "Show me pizza restaurants near Atlanta" --verbose
 
-python smart_runtime.py --url underarmour.com --task "Filter women's sports bras that are purple  with high support that are small size." --verbose
+# python smart_runtime.py --url underarmour.com --task "Filter women's sports bras that are purple  with high support that are small size." --verbose
+
+# python smart_runtime.py --url kayak.com --task "Find a cheapest SUV in Brooklyn for 1 day." --verbose
+
+python smart_runtime.py --url cabelas.com --task "Add a dome tent to my shopping cart." --verbose
+
+# python smart_runtime.py --url rottentomatoes.com --task "List all George Clooney movies and sort them by box office revenue" --verbose

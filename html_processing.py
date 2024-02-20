@@ -29,7 +29,7 @@ STRINGS = {}
 
 def is_random_string(string, threshold=3.0):
     """Checks if a string is random based on its entropy."""
-    if len(string) > 2:
+    if len(string) > 2 and len(string) < 100:
         if string in STRINGS:
             return STRINGS[string]
         else:
@@ -46,6 +46,8 @@ def is_random_string(string, threshold=3.0):
                 return True
             STRINGS[string] = False
         return False
+    elif len(string) >= 100:
+        return True
     return False
 
 

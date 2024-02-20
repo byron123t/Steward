@@ -124,6 +124,7 @@ class PageStateActor:
         return tag_id_list, element_list, token_count
 
     def action_element_selection(self, tag_id_list, element_list):
+        print(tag_id_list)
         if len(tag_id_list) > 0:
             formatted_items = ['({}) {}'.format(i + 1, item) for i, item in enumerate(element_list)]
             # formatted_items = ['({}) {} {}'.format(i + 1, verb_list[i], item) for i, item in enumerate(element_list)]
@@ -172,16 +173,19 @@ class PageStateActor:
             BM.mark('element_proposal')
             BM.mark('makes_sense_checking')
             counter = 0
-            while not self.makes_sense_elements(element_list):
+            makes_sense, _, _ = self.makes_sense_elements(element_list)
+            while not makes_sense:
                 if counter > n_tries:
                     break
                 tag_id_list, element_list, _ = self.element_filtering(temp_sublists)
+                makes_sense, _, _ = self.makes_sense_elements(element_list)
                 counter += 1
             BM.mark('makes_sense_checking')
             BM.mark('element_action_selection')
             tag_id, newelement, action, verb, message, _ = self.action_element_selection(tag_id_list, element_list)
             BM.mark('element_action_selection')
-            if tag_id:
+            print(tag_id, newelement, action, verb, message)
+            if tag_id is not None:
                 if self.verbose: print(tag_id, current_chunk_len)
                 return tag_id, newelement, action, verb, message
 
@@ -317,15 +321,16 @@ class PageStateActor:
             formatted_items = ['({}) {}'.format(i + 1, item) for i, item in enumerate(keys)]
             keys_str = '\n'.join(formatted_items)
             message, _ = OAI.handle_response(prompts.SYS_MEMORY_RETRIEVAL, prompts.USER_MEMORY_RETRIEVAL.format(query=self.next_action, keys=keys_str))
+            if self.verbose: print('MEMORY RETRIEVAL\n{}\n\n'.format(message))
             if message.lower().strip().startswith('none'):
                 return None
             else:
                 numbers = re.findall(r'\d+', message)
                 if len(numbers) > 0:
                     if mode == 'action':
-                        return sequences[self.base_url_only]['actions'][keys[int(numbers[0])]]
+                        return sequences[self.base_url_only]['actions'][keys[int(numbers[0]) - 1]]
                     elif mode == 'goal':
-                        return sequences[self.base_url_only]['goals'][keys[int(numbers[0])]]
+                        return sequences[self.base_url_only]['goals'][keys[int(numbers[0]) - 1]]
 
     def store_memorized_sequence(self, verb, element, mode='action'):
         with open('memorized_sequences.json', 'r') as infile:
@@ -351,17 +356,19 @@ class PageStateActor:
             stripped_list.append(element.strip().lower())
         return stripped_list
             
-    def limit_elements(self, sublists):
-        message, _ = OAI.handle_response(prompts.SYS_CSS_SELECTOR, prompts.USER_CSS_SELECTOR.format(site=self.base_url, context=self.context, next_action=self.next_action))
-        options = message.split('\n')
-        options = list(set(option.lower() for option in options))
+    def limit_elements(self, elements):
         limited_elements = []
-        stripped_list = self.flatten_strip_elements(sublists)
-        for element in stripped_list:
-            for option in options:
-                if option in element:
-                    limited_elements.append(element)
-        return [limited_elements]
+        while len(limited_elements) < 1:
+            message, _ = OAI.handle_response(prompts.SYS_CSS_SELECTOR, prompts.USER_CSS_SELECTOR.format(next_action=self.next_action))
+            options = message.split('\n')
+            options = list(set(option.lower() for option in options))
+            if self.verbose: print('LIMITING STRINGS\n{}\n\n'.format(options))
+            # stripped_list = self.flatten_strip_elements(elements)
+            for element in elements:
+                for option in options:
+                    if option in element:
+                        limited_elements.append(element)
+        return limited_elements
 
     def get_element(self, element, sublists):
         stripped_list = self.flatten_strip_elements(sublists)
@@ -374,34 +381,53 @@ class PageStateActor:
                 return stripped_list.index(matches[0])
         return None
     
-    def filter_elements(self):
+    def filter_elements(self, limit_elements=True):
         BM.mark('filter_elements')
-        flattened_interactables = []
+        flattened_interactables_map = {}
+        cleaned_elements_map = {}
         all_elements = {}
+        flattened_interactables = []
+        elements = []
         sublists = []
         current_sublist = []
         current_tokens = 0
+        counter = 0
+        for tag in self.interactables:
+            for i in range(tag.count()):
+                counter += 1
+        print('TOTAL ELEMENTS: {}'.format(counter))
         for tag in self.interactables:
             for i in range(tag.count()):
                 try:
                     element = tag.nth(i).evaluate("el => el.outerHTML", timeout=500)
                     if element not in all_elements:
                         all_elements[element] = 1
-                        cleansed_element = clean_element(element)
                         flattened_interactables.append(tag.nth(i))
-                        encoded_element = ENCODING.encode(cleansed_element)
-                        if current_tokens + len(encoded_element) <= self.MAX_TOKENS:
-                            current_sublist.append(cleansed_element)
-                            current_tokens += len(encoded_element)
-                        else:
-                            sublists.append(current_sublist)
-                            current_sublist = [cleansed_element]
-                            current_tokens = len(encoded_element)
+                        stripped_lowered_element = element.lower().strip()
+                        if element not in flattened_interactables_map:
+                            flattened_interactables_map[stripped_lowered_element] = len(flattened_interactables) - 1
+                        elements.append(stripped_lowered_element)
                 except Exception as e:
                     if self.verbose: print(tag, e)
                     pass
+
+        if limit_elements:
+            elements = self.limit_elements(elements)
+        print('LIMITED ELEMENTS: {}'.format(len(elements)))
+        for element in elements:
+            cleansed_element = clean_element(element)
+            cleaned_elements_map[cleansed_element] = element
+            encoded_element = ENCODING.encode(cleansed_element)
+            if current_tokens + len(encoded_element) <= self.MAX_TOKENS:
+                current_sublist.append(cleansed_element)
+                current_tokens += len(encoded_element)
+            else:
+                sublists.append(current_sublist)
+                current_sublist = [cleansed_element]
+                current_tokens = len(encoded_element)
         if current_sublist:
             sublists.append(current_sublist)
+
         with open('all_elements.html', 'w') as outfile:
             counter = 1
             for element, _ in all_elements.items():
@@ -411,12 +437,16 @@ class PageStateActor:
             for sublist in sublists:
                 for i, element in enumerate(sublist):
                     outfile.write('({}) {}\n\n'.format(i, element))
+        with open('limited_elements.html', 'w') as outfile:
+            for element in elements:
+                outfile.write('{}\n\n'.format(element))
         BM.mark('filter_elements')
-        return sublists, flattened_interactables
+
+        return sublists, flattened_interactables, flattened_interactables_map, cleaned_elements_map
     
     def run(self):
         n_tries = 3
-        limit_elements = False
+        limit_elements = True
         sequence = False
         # sequence = self.retrieve_memorized_sequence(mode='goal')
         if sequence:
@@ -433,10 +463,7 @@ class PageStateActor:
                 future_to_function = {
                     executor.submit(self.process_screenshot): 'process_screenshot',
                     executor.submit(self.get_page_context): 'get_page_context',
-                    executor.submit(self.end_state): 'end_state',
-                }
-        sublists, flattened_interactables = self.filter_elements()
-        
+                }        
         results = {}
         for future in as_completed(future_to_function):
             func_name = future_to_function[future]
@@ -447,29 +474,32 @@ class PageStateActor:
                 print(f'{func_name} generated an exception: {exc}')
         print(results)
         
-        if len(self.ACTIONS) > 0 and results['end_state'][0]:
+        self.context, _ = results['get_page_context']
+        if len(self.ACTIONS) > 0 and self.end_state()[0]:
             if self.verbose: print('SUCCESS END STATE')
             self.store_memorized_sequence(verb, newelement, mode='goal')
             return True
         self.next_action = results['process_screenshot']
+        sublists, flattened_interactables, flattened_interactables_map, cleaned_elements_map = self.filter_elements(limit_elements=limit_elements)
+
         sequence = self.retrieve_memorized_sequence()
+        high_level_element = ' '.join(self.next_action.split()[1:])
         if sequence:
             verb = sequence['verb']
             newelement = sequence['element']
+            print(newelement)
             action = ACTION_VERB_MAP[verb]
             tag_id = self.get_element(newelement, sublists)
             if self.verbose: print('CACHE MATCH FOUND {}\n{} {}\n\n'.format(tag_id, verb, newelement))
         else:
-            high_level_element = ' '.join(self.next_action.split()[1:])
-            self.context, _ = results['get_page_context']
             if self.verbose: print('\n========================================\n')
             if self.verbose: print('STATE:\n------\nWebsite visited: {site}\nPage context: {context}\nUser goal: {goal}\nPrior actions: {actions}\n\n'.format(site=self.base_url, context=self.context, goal=self.goal, actions=self.ACTIONS))
-            if limit_elements:
-                sublists = self.limit_elements(sublists)
             tag_id, newelement, action, verb, message = self.next_element(sublists, n_tries=n_tries)
             if tag_id is None:
                 if self.verbose: print('ERROR')
-        newtag = flattened_interactables[tag_id]
+            print(newelement)
+        newtag = flattened_interactables[flattened_interactables_map[cleaned_elements_map[newelement]]]
+        print(newtag)
         bounds = newtag.bounding_box()
 
         candidate = '{} {}'.format(verb, newelement)
@@ -509,7 +539,7 @@ class PageStateActor:
             else:
                 if self.verbose: print('DOESNT MAKE SENSE')
         self.ACTIONS.append(high_level_action)
-        return False 
+        return False
 
 
 def recurse_interactables(actor, context, page: Page, depth, depth_limit=10, action_limit=1000):
