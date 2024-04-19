@@ -19,32 +19,45 @@ class ParseHtml:
         interactables.extend(self.soup.select('input'))
         interactables.extend(self.soup.select('select'))
         interactables.extend(self.soup.select('textarea'))
-        interactables.append(self.soup.select('[role*="{}"]'.format('radio')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('option')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('checkbox')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('button')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('tab')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('textbox')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('link')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('menuitem')))
-        interactables.append(self.soup.select('[role*="{}"]'.format('tabpanel')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-accordion')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-draggable-handle')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-droppable')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-sortable-handle')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-accordion-header-collapsed')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-datepicker-prev')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-datepicker-next')))
-        interactables.append(self.soup.select('[class*="{}"]'.format('ui-slider')))
-        interactables.extend(self.soup.select('[data-event*=""]'))
-        interactables.extend(self.soup.select('[data-action*=""]'))
-        interactables.append(self.soup.select('[href]'))
-        interactables.append(self.soup.select('[aria-controls]'))
-        interactables.append(self.soup.select('[aria-label]'))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('radio')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('option')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('checkbox')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('button')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('tab')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('textbox')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('link')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('menuitem')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('menu')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('tabpanel')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('combobox')))
+        interactables.extend(self.soup.select('[role*="{}"]'.format('select')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('radio')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('option')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('checkbox')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('button')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('textbox')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('menuitem')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('menu')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('tabpanel')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('combobox')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('select')))
+        interactables.extend(self.soup.select('[class*="{}"]'.format('suggestion')))
+        interactables.extend(self.soup.select('[onclick]'))
+        interactables.extend(self.soup.select('[href]'))
+        interactables.extend(self.soup.select('[aria-controls]'))
+        interactables.extend(self.soup.select('[aria-label]'))
+        interactables.extend(self.soup.select('[aria-labelledby]'))
+        interactables.extend(self.soup.select('[aria-haspopup]'))
+        interactables.extend(self.soup.select('[aria-owns]'))
+        interactables.extend(self.soup.select('[aria-selected]'))
+
         if clean:
             for element in interactables:
                 if 'backend_node_id' in element.attrs:
-                        del element.attrs['backend_node_id']
+                    del element.attrs['backend_node_id']
+                if 'data_pw_testid_buckeye' in element.attrs:
+                    del element.attrs['data_pw_testid_buckeye']
+                
         return interactables
 
     def get_page_text(self):

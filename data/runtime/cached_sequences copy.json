@@ -1,0 +1,1266 @@
+{
+    "macys.com": {
+        "E-commerce Product Listing": {
+            "actions": {
+                "click \"Gift Registry\" link at the top of the page": {
+                    "verb": "click",
+                    "element": "<a id=\"registry-link\" title=\"gift registry\" href=\"/registry\">gift registry</a>\n",
+                    "timestamps": [
+                        "2024-04-10 09:10:17.871520"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "find marriage registry with name JANE DOE": [
+                    {
+                        "verb": "click",
+                        "element": "<a id=\"registry-link\" title=\"gift registry\" href=\"/registry\">gift registry</a>\n",
+                        "timestamps": [
+                            "2024-04-10 09:10:17.871525"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "type_text into the search box under \"Find a Registry\" that says \"Search by name or registry ID\"": {
+                    "verb": "type_text",
+                    "element": "<input class=\"input-field order-number-field\" placeholder=\" \" name=\"registrysearch\" id=\"registrysearch\" type=\"text\">\n",
+                    "timestamps": [
+                        "2024-04-10 09:10:52.509745"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "find marriage registry with name JANE DOE": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input class=\"input-field order-number-field\" placeholder=\" \" name=\"registrysearch\" id=\"registrysearch\" type=\"text\">\n",
+                        "timestamps": [
+                            "2024-04-10 09:10:52.509754"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "stubhub.com": {
+        "E-commerce Product Listing": {
+            "actions": {
+                "type_text search bar": {
+                    "verb": "type_text",
+                    "element": "<input placeholder=\"search events, artists, teams, and more\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-10 10:25:36.093332"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Book 4 tickets in upper  for any Kevin Hart show in Brisbane, Australia, before 30 March, view tickes prices with estimated fees.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input placeholder=\"search events, artists, teams, and more\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-10 10:25:36.093356"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Ticket Booking Page": {
+            "actions": {
+                "click the \"Gift Cards\" link at the top navigation bar": {
+                    "verb": "click",
+                    "element": "<a href=\"/gift-cards\">gift cards</a>\n",
+                    "timestamps": [
+                        "2024-04-15 16:32:27.844910"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find 00 egift card which has Happy Birthday on it for myself and add to cart.": [
+                    {
+                        "verb": "click",
+                        "element": "<a href=\"/gift-cards\">gift cards</a>\n",
+                        "timestamps": [
+                            "2024-04-15 16:32:27.844916"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click the \"Buy now\" button under the EGIFT CARDS section": {
+                    "verb": "click",
+                    "element": "<button>buy now</button>\n",
+                    "timestamps": [
+                        "2024-04-15 16:32:39.016473"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find 00 egift card which has Happy Birthday on it for myself and add to cart.": [
+                    {
+                        "verb": "click",
+                        "element": "<button>buy now</button>\n",
+                        "timestamps": [
+                            "2024-04-15 16:32:39.016480"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Event Listing Page": {
+            "actions": {
+                "type_text searchBar with a magnifying glass icon": {
+                    "verb": "type_text",
+                    "element": "<input placeholder=\"search events, artists, teams, and more\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-15 17:12:57.280606"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a NOFX ticket for a show in Madrid, Spain on May 14 for 1 person.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input placeholder=\"search events, artists, teams, and more\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-15 17:12:57.280630"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "drugs.com": {
+        "null": {
+            "actions": {
+                "click the link labeled \"Aruba Aloe Balm N.V. Issues Voluntary Nationwide Recall of Aruba Aloe Hand Sanitizer Gel Alcohol 80% and Aruba Aloe Alcoholada Gel Due to Presence of Methanol\"": {
+                    "verb": "click",
+                    "element": "<a>aruba aloe balm n.v. issues voluntary nationwide recall of aruba aloe hand sanitizer gel alcohol 80% and aruba aloe alcoholada gel due to presence of methanol</a>\n",
+                    "timestamps": [
+                        "2024-04-15 15:42:22.829167"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Show me the latest FDA alerts.": [
+                    {
+                        "verb": "click",
+                        "element": "<a>aruba aloe balm n.v. issues voluntary nationwide recall of aruba aloe hand sanitizer gel alcohol 80% and aruba aloe alcoholada gel due to presence of methanol</a>\n",
+                        "timestamps": [
+                            "2024-04-15 15:42:22.829176"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click the link that says \"See all results for Adderall side effects\"": {
+                    "verb": "click",
+                    "element": "<a class=\"ls-item ls-item-all\" href=\"/search.php?searchterm=adderall%20side%20effects\">see all results for adderall side effects</a>\n\n",
+                    "timestamps": [
+                        "2024-04-10 10:39:12.657979"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Show me the page with information about Adderall side effects.": [
+                    {
+                        "verb": "click",
+                        "element": "<a class=\"ls-item ls-item-all\" href=\"/search.php?searchterm=adderall%20side%20effects\">see all results for adderall side effects</a>\n\n",
+                        "timestamps": [
+                            "2024-04-10 10:39:12.657985"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Search Results Page": {
+            "actions": {
+                "click the link that says \"Side Effects\"": {
+                    "verb": "click",
+                    "element": "<a href=\"/sfx/adderall-side-effects.html\">side effects</a>\n",
+                    "timestamps": [
+                        "2024-04-10 10:39:34.511887"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Show me the page with information about Adderall side effects.": [
+                    {
+                        "verb": "click",
+                        "element": "<a href=\"/sfx/adderall-side-effects.html\">side effects</a>\n",
+                        "timestamps": [
+                            "2024-04-10 10:39:34.511894"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "E-commerce Product Listing": {
+            "actions": {
+                "click the link labeled \"FDA Alerts\" under the \"Browse by Site Section\" heading": {
+                    "verb": "click",
+                    "element": "<a class=\"ddc-carousel-item\"> fda alerts<img src=\"img/home/fda-alerts.png\" alt=\"\"> </a>\n\n",
+                    "timestamps": [
+                        "2024-04-15 15:41:19.893660"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Show me the latest FDA alerts.": [
+                    {
+                        "verb": "click",
+                        "element": "<a class=\"ddc-carousel-item\"> fda alerts<img src=\"img/home/fda-alerts.png\" alt=\"\"> </a>\n\n",
+                        "timestamps": [
+                            "2024-04-15 15:41:19.893675"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "accuweather.com": {
+        "null": {
+            "actions": {
+                "click search button next to the search bar": {
+                    "verb": "click",
+                    "element": "<input name=\"query\" class=\"search-input\" type=\"text\" placeholder=\"search your address, city or zip code\" data-placeholder=\"search your address, city or zip code\">\n",
+                    "timestamps": [
+                        "2024-04-15 16:36:23.536051"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Check the daily forecast in Madison, WI from April 21 - May 1, 2024.": [
+                    {
+                        "verb": "click",
+                        "element": "<input name=\"query\" class=\"search-input\" type=\"text\" placeholder=\"search your address, city or zip code\" data-placeholder=\"search your address, city or zip code\">\n",
+                        "timestamps": [
+                            "2024-04-15 16:36:23.536057"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click the first option \"Manchester, Manchester, Greater Manchester GBR\" in the search results.": {
+                    "verb": "click",
+                    "element": "<div class=\"search-options\">location chevron down location news videos </div>\n\n",
+                    "timestamps": [
+                        "2024-04-10 10:50:46.855167"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "find the Monthly forecast for Manchester, GB for May": [
+                    {
+                        "verb": "click",
+                        "element": "<div class=\"search-options\">location chevron down location news videos </div>\n\n",
+                        "timestamps": [
+                            "2024-04-10 10:50:46.855172"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "tiktok.com": {
+        "Login Page": {
+            "actions": {
+                "click Continue as guest": {
+                    "verb": "click",
+                    "element": "<div role=\"link\" class=\"css-1gtmaw0-divboxcontainer\">continue as guest</div>\n\n",
+                    "timestamps": [
+                        "2024-04-13 14:09:33.595566"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Show me the tik tok series playlist from brazil": [
+                    {
+                        "verb": "click",
+                        "element": "<div role=\"link\" class=\"css-1gtmaw0-divboxcontainer\">continue as guest</div>\n\n",
+                        "timestamps": [
+                            "2024-04-13 14:09:33.595573"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click search button with magnifying glass icon": {
+                    "verb": "press_enter",
+                    "element": "<input placeholder=\"search\" name=\"q\" type=\"search\" role=\"combobox\" aria-label=\"search\" class=\"css-1yf5w3n-inputelement\" value=\"tik tok series playlist brazil\">\n",
+                    "timestamps": [
+                        "2024-04-13 14:10:06.132556"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Show me the tik tok series playlist from brazil": [
+                    {
+                        "verb": "press_enter",
+                        "element": "<input placeholder=\"search\" name=\"q\" type=\"search\" role=\"combobox\" aria-label=\"search\" class=\"css-1yf5w3n-inputelement\" value=\"tik tok series playlist brazil\">\n",
+                        "timestamps": [
+                            "2024-04-13 14:10:06.132567"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click \"Search button with a magnifying glass icon\"": {
+                    "verb": "click",
+                    "element": "<button type=\"submit\" aria-label=\"search\" class=\"css-16dy42q-buttonsearch\"></button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 15:21:34.958915"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Browse the best Australian food songs.": [
+                    {
+                        "verb": "click",
+                        "element": "<button type=\"submit\" aria-label=\"search\" class=\"css-16dy42q-buttonsearch\"></button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 15:21:34.958925"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Video Hosting Page": {
+            "actions": {
+                "type_text search field with placeholder text \"Search accounts and videos\"": {
+                    "verb": "type_text",
+                    "element": "<input placeholder=\"search\" name=\"q\" type=\"search\" role=\"combobox\" aria-label=\"search\" class=\"css-1yf5w3n-inputelement\" value=\"australian food songs\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:22:54.602330"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Browse the best Australian food songs.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input placeholder=\"search\" name=\"q\" type=\"search\" role=\"combobox\" aria-label=\"search\" class=\"css-1yf5w3n-inputelement\" value=\"australian food songs\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:22:54.602353"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "nba.com": {
+        "Home Page": {
+            "actions": {
+                "click the \"I Accept\" button": {
+                    "verb": "click",
+                    "element": "<button id=\"onetrust-accept-btn-handler\">i accept</button>\n",
+                    "timestamps": [
+                        "2024-04-13 14:19:29.248259"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find the current league leader in Assists Per Game.": [
+                    {
+                        "verb": "click",
+                        "element": "<button id=\"onetrust-accept-btn-handler\">i accept</button>\n",
+                        "timestamps": [
+                            "2024-04-13 14:19:29.248263"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click the \"See All Player Stats\" link": {
+                    "verb": "click",
+                    "element": "<a href=\"/stats/players/traditional/?permode=totals&amp;sort=pts&amp;dir=-1\" class=\"anchor_anchor__csc3p block_blocktitlelink___pjnr\">see all player stats</a>\n",
+                    "timestamps": [
+                        "2024-04-13 14:20:54.804249"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find the current league leader in Assists Per Game.": [
+                    {
+                        "verb": "click",
+                        "element": "<a href=\"/stats/players/traditional/?permode=totals&amp;sort=pts&amp;dir=-1\" class=\"anchor_anchor__csc3p block_blocktitlelink___pjnr\">see all player stats</a>\n",
+                        "timestamps": [
+                            "2024-04-13 14:20:54.804255"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "shopping.google.com": {
+        "E-commerce Product Listing": {
+            "actions": {
+                "type_text searchBar with placeholder text \"What are you looking for?\"": {
+                    "verb": "type_text",
+                    "element": "<input name=\"q\" type=\"search\" role=\"combobox\" placeholder=\"what are you looking for?\">\n",
+                    "timestamps": [
+                        "2024-04-13 14:37:14.221773"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Look for a White PlayStation 5 Console and save it": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input name=\"q\" type=\"search\" role=\"combobox\" placeholder=\"what are you looking for?\">\n",
+                        "timestamps": [
+                            "2024-04-13 14:37:14.221794"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "united.com": {
+        "Home Page": {
+            "actions": {
+                "click link \"Changed bag rules and fees for optional services\"": {
+                    "verb": "click",
+                    "element": "<a class=\"atm-c-btn--link atm-c-btn--small\" href=\"https://www.united.com/web/en-us/content/travel/baggage/changed-bag-rules-optional-services.aspx\" title=\"changed bag rules\">changed bag rules</a>\n\n",
+                    "timestamps": [
+                        "2024-04-13 15:27:24.112801"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Open the baggage fee calculator.": [
+                    {
+                        "verb": "click",
+                        "element": "<a class=\"atm-c-btn--link atm-c-btn--small\" href=\"https://www.united.com/web/en-us/content/travel/baggage/changed-bag-rules-optional-services.aspx\" title=\"changed bag rules\">changed bag rules</a>\n\n",
+                        "timestamps": [
+                            "2024-04-13 15:27:24.112806"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click \"New York, NY, US (All Airports)\" in \"To\" dropdown menu": {
+                    "verb": "click",
+                    "element": "<button class=\"app-containers-baggagecalculator-forms-anyflight-styles__breathe--jqhpu atm-c-btn--primary\" type=\"submit\" id=\"anyflightformsubmit\">view bag charges</button>\n\n",
+                    "timestamps": [
+                        "2024-04-13 15:28:42.467936"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Open the baggage fee calculator.": [
+                    {
+                        "verb": "click",
+                        "element": "<button class=\"app-containers-baggagecalculator-forms-anyflight-styles__breathe--jqhpu atm-c-btn--primary\" type=\"submit\" id=\"anyflightformsubmit\">view bag charges</button>\n\n",
+                        "timestamps": [
+                            "2024-04-13 15:28:42.467944"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "healthline.com": {
+        "null": {
+            "actions": {
+                "It seems like there was an error in the previous action since the screenshot does not indicate that a sign-up form or similar feature was interacted with. Since the task involves finding a diet and then signing up to receive the information by email, we need to navigate to a relevant section or feature that would allow signing up using the email address provided.\n\nConsidering the screenshot, there do not appear to be any sign-up elements visible. Please scroll down the page to look for an option to sign up for newsletters or diet plans.": {
+                    "verb": "click",
+                    "element": "<button aria-label=\"click to subscribe to our newsletter\" id=\"newsletter-subscription-dialog\" role=\"dialog\">subscribe</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 15:58:45.404576"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find an easy-to-follow evidence-based nutritious vegetarian diet to lose weight for a diabetic and heart patient, and sign-up to get the results by email buckeye.foodbar@gym.": [
+                    {
+                        "verb": "click",
+                        "element": "<button aria-label=\"click to subscribe to our newsletter\" id=\"newsletter-subscription-dialog\" role=\"dialog\">subscribe</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 15:58:45.404583"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click on the \"JOIN NOW\" button": {
+                    "verb": "click",
+                    "element": "<button class=\"hl-id-class\" type=\"submit\">join now</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 15:58:20.270677"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find an easy-to-follow evidence-based nutritious vegetarian diet to lose weight for a diabetic and heart patient, and sign-up to get the results by email buckeye.foodbar@gym.": [
+                    {
+                        "verb": "click",
+                        "element": "<button class=\"hl-id-class\" type=\"submit\">join now</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 15:58:20.270684"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "www.ryanair.com": {
+        "Home Page": {
+            "actions": {
+                "click button \"Yes, I agree\"": {
+                    "verb": "click",
+                    "element": "<button class=\"cookie-popup-with-overlay__button-settings\">yes, i agree</button>\n",
+                    "timestamps": [
+                        "2024-04-13 15:50:23.404026"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a flight from Dresden to anywhere under 00": [
+                    {
+                        "verb": "click",
+                        "element": "<button class=\"cookie-popup-with-overlay__button-settings\">yes, i agree</button>\n",
+                        "timestamps": [
+                            "2024-04-13 15:50:23.404034"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Ticket Booking Page": {
+            "actions": {
+                "click \"No, thanks\" button": {
+                    "verb": "click",
+                    "element": "<div class=\"cookie-popup-with-overlay__buttons\">view cookie settings no, thanks yes, i agree</div>\n\n",
+                    "timestamps": [
+                        "2024-04-13 15:54:32.340520"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a flight from Dresden to anywhere under 00": [
+                    {
+                        "verb": "click",
+                        "element": "<div class=\"cookie-popup-with-overlay__buttons\">view cookie settings no, thanks yes, i agree</div>\n\n",
+                        "timestamps": [
+                            "2024-04-13 15:54:32.340528"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "It appears that there is a loading screen currently overlaying the webpage, which might be obstructing the ability to interact with the site's functionality. Please wait for the loading to complete before attempting further actions. If the loading screen persists and does not allow you to interact with the website, you might need to refresh the page or check your internet connection. If the loading completes and the page elements become interactive:\n\nType \"Anywhere\" in the \"To Destination\" input field.": {
+                    "verb": "type_text",
+                    "element": "<input type=\"text\" class=\"input-button__input ng-star-inserted\" id=\"input-button__destination\" placeholder=\"destination\">\n",
+                    "timestamps": [
+                        "2024-04-13 15:55:01.071299"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a flight from Dresden to anywhere under 00": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input type=\"text\" class=\"input-button__input ng-star-inserted\" id=\"input-button__destination\" placeholder=\"destination\">\n",
+                        "timestamps": [
+                            "2024-04-13 15:55:01.071330"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "imdb.com": {
+        "Product Detail Page": {
+            "actions": {
+                "click \"Menu\" button in the top left corner": {
+                    "verb": "click",
+                    "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                    "timestamps": [
+                        "2024-04-15 14:31:23.449692"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Browse the list of top 250 movies and add the first one to my watchlist.": [
+                    {
+                        "verb": "click",
+                        "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                        "timestamps": [
+                            "2024-04-15 14:31:23.449702"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click \"add to watchlist\" button next to the title \"The Shawshank Redemption\"": {
+                    "verb": "click",
+                    "element": "<div class=\"ipc-watchlist-ribbon ipc-focusable ipc-watchlist-ribbon--s ipc-watchlist-ribbon--base ipc-watchlist-ribbon--onimage ipc-poster__watchlist-ribbon\" aria-label=\"add to watchlist\" role=\"button\" tabindex=\"0\"></div>\n\n",
+                    "timestamps": [
+                        "2024-04-15 14:39:26.864652"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Browse the list of top 250 movies and add the first one to my watchlist.": [
+                    {
+                        "verb": "click",
+                        "element": "<div class=\"ipc-watchlist-ribbon ipc-focusable ipc-watchlist-ribbon--s ipc-watchlist-ribbon--base ipc-watchlist-ribbon--onimage ipc-poster__watchlist-ribbon\" aria-label=\"add to watchlist\" role=\"button\" tabindex=\"0\"></div>\n\n",
+                        "timestamps": [
+                            "2024-04-15 14:39:26.864657"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click \"Menu\" button in the top left corner": {
+                    "verb": "click",
+                    "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" tabindex=\"0\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                    "timestamps": [
+                        "2024-04-15 14:36:54.156276"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Browse the list of top 250 movies and add the first one to my watchlist.": [
+                    {
+                        "verb": "click",
+                        "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" tabindex=\"0\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                        "timestamps": [
+                            "2024-04-15 14:36:54.156287"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "adoptapet.com": {
+        "User Dashboard": {
+            "actions": {
+                "type_text into the text box with the placeholder that reads \"Secaucus, NJ\"": {
+                    "verb": "type_text",
+                    "element": "<input type=\"text\" placeholder=\" \" name=\"location\" class=\"w-full h-full rounded-md text-kin-brown\" id=\"location-1\">\n",
+                    "timestamps": [
+                        "2024-04-15 14:50:48.215991"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find an adult husky near zip code 10019.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input type=\"text\" placeholder=\" \" name=\"location\" class=\"w-full h-full rounded-md text-kin-brown\" id=\"location-1\">\n",
+                        "timestamps": [
+                            "2024-04-15 14:50:48.216019"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click \"Back to search results\" link at the top left of the page": {
+                    "verb": "click",
+                    "element": "<a href=\"https://www.adoptapet.com/animal-shelters-near-me\" class=\"flex flex-row items-center\">small, blue, left-facing arrow back to search results </a>\n\n",
+                    "timestamps": [
+                        "2024-04-15 16:28:33.814866"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a shelter for rabbits and small animals within 100 miles of zip 77084.": [
+                    {
+                        "verb": "click",
+                        "element": "<a href=\"https://www.adoptapet.com/animal-shelters-near-me\" class=\"flex flex-row items-center\">small, blue, left-facing arrow back to search results </a>\n\n",
+                        "timestamps": [
+                            "2024-04-15 16:28:33.814882"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "E-commerce Product Listing": {
+            "actions": {
+                "select_option \"Breed\" dropdown menu": {
+                    "verb": "click",
+                    "element": "<button class=\"font-bold border-none bg-none focus:outline-none text-kin-teal-2 text-h5 desktop:text-h4\" type=\"button\">a blue arrow show all breeds</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 14:52:12.152252"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find an adult husky near zip code 10019.": [
+                    {
+                        "verb": "click",
+                        "element": "<button class=\"font-bold border-none bg-none focus:outline-none text-kin-teal-2 text-h5 desktop:text-h4\" type=\"button\">a blue arrow show all breeds</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 14:52:12.152265"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "pinterest.com": {
+        "Home Page": {
+            "actions": {
+                "click \"Login\" button": {
+                    "verb": "click",
+                    "element": "<button tabindex=\"0\" type=\"button\">log in</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 15:05:20.720716"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Save on my pins a Halloween costume image.": [
+                    {
+                        "verb": "click",
+                        "element": "<button tabindex=\"0\" type=\"button\">log in</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 15:05:20.720724"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "User Registration Page": {
+            "actions": {
+                "type_text \"Your Email Address\" in the \"Email\" field": {
+                    "verb": "type_text",
+                    "element": "<input class=\"ifc\" id=\"email\" name=\"id\" placeholder=\"email\" type=\"email\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:05:37.172621"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Save on my pins a Halloween costume image.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input class=\"ifc\" id=\"email\" name=\"id\" placeholder=\"email\" type=\"email\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:05:37.172636"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click the \"search\" field": {
+                    "verb": "press_enter",
+                    "element": "<input aria-label=\"search\" name=\"searchboxinput\" placeholder=\"search for easy dinners, fashion, etc.\" role=\"combobox\" type=\"text\" value=\"halloween costumeeasy chicken dinner\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:06:58.292894"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Save on my pins a Halloween costume image.": [
+                    {
+                        "verb": "press_enter",
+                        "element": "<input aria-label=\"search\" name=\"searchboxinput\" placeholder=\"search for easy dinners, fashion, etc.\" role=\"combobox\" type=\"text\" value=\"halloween costumeeasy chicken dinner\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:06:58.292908"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "User Dashboard": {
+            "actions": {
+                "type_text \"Enter your email\" in the Email field": {
+                    "verb": "type_text",
+                    "element": "<input class=\"ifc\" id=\"email\" name=\"id\" placeholder=\"email\" type=\"email\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:10:10.689615"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Save on my pins a Halloween costume image.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input class=\"ifc\" id=\"email\" name=\"id\" placeholder=\"email\" type=\"email\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:10:10.689996"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "E-commerce Product Listing": {
+            "actions": {
+                "type_text [Your Password] in \"Password\" field": {
+                    "verb": "type_text",
+                    "element": "<input class=\"ifc\" id=\"password\" name=\"password\" placeholder=\"password\" type=\"password\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:10:25.036719"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Save on my pins a Halloween costume image.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input class=\"ifc\" id=\"password\" name=\"password\" placeholder=\"password\" type=\"password\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:10:25.036747"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "ign.com": {
+        "Home Page": {
+            "actions": {
+                "type_text search bar with magnifying glass icon": {
+                    "verb": "click",
+                    "element": "<button type=\"button\" class=\"stack navigation-item sidebar-item collapsed\" title=\"search\" tabindex=\"0\">search</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 15:28:06.811396"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a walkthrough for the game \"The Legend of Zelda: Breath of the Wild\".": [
+                    {
+                        "verb": "click",
+                        "element": "<button type=\"button\" class=\"stack navigation-item sidebar-item collapsed\" title=\"search\" tabindex=\"0\">search</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 15:28:06.811402"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "tvguide.com": {
+        "null": {
+            "actions": {
+                "type_text search bar with the placeholder text \"Search TV Shows and Movies...\"": {
+                    "verb": "type_text",
+                    "element": "<input type=\"text\" placeholder=\"search tv shows and movies...\" value=\"\" class=\"c-searchbox_autosuggest_inputelement\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:34:40.754514"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find more films from the director of Smile.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input type=\"text\" placeholder=\"search tv shows and movies...\" value=\"\" class=\"c-searchbox_autosuggest_inputelement\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:34:40.754566"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "type_text search field at the top of the page": {
+                    "verb": "type_text",
+                    "element": "<input type=\"text\" placeholder=\"search tv shows and movies...\" value=\"\" class=\"c-searchbox_autosuggest_inputelement\">\n",
+                    "timestamps": [
+                        "2024-04-15 15:38:19.851820"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find more films from the director of Smile.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input type=\"text\" placeholder=\"search tv shows and movies...\" value=\"\" class=\"c-searchbox_autosuggest_inputelement\">\n",
+                        "timestamps": [
+                            "2024-04-15 15:38:19.851853"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "redfin.com": {
+        "E-commerce Product Listing": {
+            "actions": {
+                "click the \"Real Estate Agents\" tab near the top of the page": {
+                    "verb": "click",
+                    "element": "<a class=\"menuitemclickable dropdownwidget\" href=\"/real-estate-agents\">real estate agents </a>\n",
+                    "timestamps": [
+                        "2024-04-15 16:16:16.855202"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a real estate agent job in Atlanta Georgia and apply.": [
+                    {
+                        "verb": "click",
+                        "element": "<a class=\"menuitemclickable dropdownwidget\" href=\"/real-estate-agents\">real estate agents </a>\n",
+                        "timestamps": [
+                            "2024-04-15 16:16:16.855402"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "User Dashboard": {
+            "actions": {
+                "type_text search box that says \"Find an agent in your area\" with the text \"Atlanta Georgia\"": {
+                    "verb": "click",
+                    "element": "<a href=\"/city/30756/ga/atlanta/real-estate/agents\" title=\"atlanta real estate agents\">atlanta real estate agents</a>\n",
+                    "timestamps": [
+                        "2024-04-15 16:16:37.120380"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a real estate agent job in Atlanta Georgia and apply.": [
+                    {
+                        "verb": "click",
+                        "element": "<a href=\"/city/30756/ga/atlanta/real-estate/agents\" title=\"atlanta real estate agents\">atlanta real estate agents</a>\n",
+                        "timestamps": [
+                            "2024-04-15 16:16:37.120390"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click \"Join\" button in the top right corner of the page": {
+                    "verb": "click",
+                    "element": "<a role=\"button\" tabindex=\"0\">become an agent</a>\n",
+                    "timestamps": [
+                        "2024-04-15 16:19:35.962608"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a real estate agent job in Atlanta Georgia and apply.": [
+                    {
+                        "verb": "click",
+                        "element": "<a role=\"button\" tabindex=\"0\">become an agent</a>\n",
+                        "timestamps": [
+                            "2024-04-15 16:19:35.962622"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "Home Page": {
+            "actions": {
+                "click \"Real Estate Agents\" tab at the top of the page": {
+                    "verb": "click",
+                    "element": "<a class=\"menuitemclickable dropdownwidget\" href=\"/real-estate-agents\">real estate agents </a>\n",
+                    "timestamps": [
+                        "2024-04-15 16:19:00.069227"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a real estate agent job in Atlanta Georgia and apply.": [
+                    {
+                        "verb": "click",
+                        "element": "<a class=\"menuitemclickable dropdownwidget\" href=\"/real-estate-agents\">real estate agents </a>\n",
+                        "timestamps": [
+                            "2024-04-15 16:19:00.069236"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "foxsports.com": {
+        "Home Page": {
+            "actions": {
+                "click \"More\" button with three dots icon": {
+                    "verb": "click",
+                    "element": "<button class=\"pill-comp more-pill-nav\">more</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 16:47:15.661890"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "add WWE superstar ALIYAH to your favorite by following her.": [
+                    {
+                        "verb": "click",
+                        "element": "<button class=\"pill-comp more-pill-nav\">more</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 16:47:15.661907"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "null": {
+            "actions": {
+                "click \"WWE\" option under the \"Sports & Teams\" section": {
+                    "verb": "click",
+                    "element": "<a href=\"/wwe/aliyah-superstar\" class=\"entity-list-row-container\">aliyah world wrestling entertainment<img src=\"https://b.fssta.com/uploads/application/wwe/headshots/aliyah.vresize.56.56.medium.56.png\" alt=\"aliyah\" class=\"explore-entity-image image-headshot flex-circle border-grey-d\"></a>\n\n",
+                    "timestamps": [
+                        "2024-04-15 16:49:54.555541"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "add WWE superstar ALIYAH to your favorite by following her.": [
+                    {
+                        "verb": "click",
+                        "element": "<a href=\"/wwe/aliyah-superstar\" class=\"entity-list-row-container\">aliyah world wrestling entertainment<img src=\"https://b.fssta.com/uploads/application/wwe/headshots/aliyah.vresize.56.56.medium.56.png\" alt=\"aliyah\" class=\"explore-entity-image image-headshot flex-circle border-grey-d\"></a>\n\n",
+                        "timestamps": [
+                            "2024-04-15 16:49:54.555553"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "budget.com": {
+        "Login Page": {
+            "actions": {
+                "click \"Accept All Cookies\" button": {
+                    "verb": "click",
+                    "element": "<button id=\"onetrust-accept-btn-handler\">accept all cookies</button>\n",
+                    "timestamps": [
+                        "2024-04-15 16:59:09.079698"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find cars that can be picked up at SFO on April 20, 2023 and returned on April 27, 2023.": [
+                    {
+                        "verb": "click",
+                        "element": "<button id=\"onetrust-accept-btn-handler\">accept all cookies</button>\n",
+                        "timestamps": [
+                            "2024-04-15 16:59:09.079706"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "User Registration Page": {
+            "actions": {
+                "click \"Create an Account\" closeButton": {
+                    "verb": "click",
+                    "element": "<span aria-label=\"close\" class=\"close-icon-black pull-right gap-btwn-two-close\"></span>\n",
+                    "timestamps": [
+                        "2024-04-15 16:59:31.073838"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find cars that can be picked up at SFO on April 20, 2023 and returned on April 27, 2023.": [
+                    {
+                        "verb": "click",
+                        "element": "<span aria-label=\"close\" class=\"close-icon-black pull-right gap-btwn-two-close\"></span>\n",
+                        "timestamps": [
+                            "2024-04-15 16:59:31.073847"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "rentalcars.com": {
+        "null": {
+            "actions": {
+                "type_text \"Zurich\" into the pick-up location input box": {
+                    "verb": "type_text",
+                    "element": "<input id=\"searchbox-toolbox-fts-pickup\" aria-label=\"pick-up location\" class=\"sbc-fl-text-input__input sb_bui_font_emphasized_1\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-15 17:16:56.566536"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a large car with lowest price from Apr 28 to May 1 in Zurich.": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input id=\"searchbox-toolbox-fts-pickup\" aria-label=\"pick-up location\" class=\"sbc-fl-text-input__input sb_bui_font_emphasized_1\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-15 17:16:56.566556"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        },
+        "E-commerce Product Listing": {
+            "actions": {
+                "click the \"Pick-up date\" input box": {
+                    "verb": "click",
+                    "element": "<button id=\"searchbox-toolbox-date-picker-pickup-date\" type=\"button\" value=\"sat, apr 20\" class=\"sbc-fl-button\">pick-up date sat, apr 20</button>\n\n",
+                    "timestamps": [
+                        "2024-04-15 17:17:07.256213"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a large car with lowest price from Apr 28 to May 1 in Zurich.": [
+                    {
+                        "verb": "click",
+                        "element": "<button id=\"searchbox-toolbox-date-picker-pickup-date\" type=\"button\" value=\"sat, apr 20\" class=\"sbc-fl-button\">pick-up date sat, apr 20</button>\n\n",
+                        "timestamps": [
+                            "2024-04-15 17:17:07.256221"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    },
+    "trip.com": {
+        "E-commerce Product Listing": {
+            "actions": {
+                "type_text \"New York\" in the destination field": {
+                    "verb": "type_text",
+                    "element": "<input type=\"text\" id=\"hotels-destination\" class=\"show-hightlight\" placeholder=\"city, airport, region, landmark or property name\" value=\"\">\n",
+                    "timestamps": [
+                        "2024-04-15 17:51:35.086021"
+                    ],
+                    "frequency": 1
+                }
+            },
+            "goals": {
+                "Find a Hotel in New York for the dates Wed, 17 Apr to Thu, 18 Apr 1 room for 2 Adults providing 1 Bed with Breakfast and the rent payable at Hotel with Instant confirmation and Free cancellation": [
+                    {
+                        "verb": "type_text",
+                        "element": "<input type=\"text\" id=\"hotels-destination\" class=\"show-hightlight\" placeholder=\"city, airport, region, landmark or property name\" value=\"\">\n",
+                        "timestamps": [
+                            "2024-04-15 17:51:35.086053"
+                        ],
+                        "frequency": 1
+                    }
+                ]
+            }
+        }
+    }
+}

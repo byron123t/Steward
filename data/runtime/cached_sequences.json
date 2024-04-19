@@ -1,0 +1,411 @@
+{
+    "macys.com": {
+        "actions": {
+            "click \"Decline Offer\" button": {
+                "verb": "click",
+                "element": "<button type=\"reset\" class=\"bx-button\" aria-label=\"decline offer; close the dialog\">decline offer</button>\n",
+                "timestamps": [
+                    "2024-04-16 19:03:15.064707",
+                    "2024-04-16 22:19:29.908257",
+                    "2024-04-16 22:45:10.526352",
+                    "2024-04-16 22:51:44.059809",
+                    "2024-04-16 23:04:42.997653"
+                ],
+                "frequency": 5
+            },
+            "click \"Gift Registry\" button at the top of the page": {
+                "verb": "click",
+                "element": "<a class=\"link-rail-item small undecorated-link\" href=\"https://www.macys.com/registry\" target=\"_self\"> gift registry </a>\n",
+                "timestamps": [
+                    "2024-04-16 19:51:28.332959",
+                    "2024-04-16 22:04:46.612524",
+                    "2024-04-16 22:10:36.400270",
+                    "2024-04-16 22:19:46.093494",
+                    "2024-04-16 22:24:22.734125",
+                    "2024-04-16 22:30:11.941944",
+                    "2024-04-16 22:36:40.259071",
+                    "2024-04-16 22:45:25.288855",
+                    "2024-04-16 22:51:29.732754",
+                    "2024-04-16 22:52:00.896813",
+                    "2024-04-16 23:04:25.802285",
+                    "2024-04-16 23:05:07.162677"
+                ],
+                "frequency": 12
+            },
+            "type_text \"JANE DOE\" in the search box labeled \"Search by name or registry ID\"": {
+                "verb": "type_text",
+                "element": "<input class=\"input-field order-number-field\" placeholder=\" \" name=\"registrysearch\" id=\"registrysearch\" type=\"text\">\n",
+                "timestamps": [
+                    "2024-04-16 19:52:01.442429",
+                    "2024-04-16 22:11:05.809636",
+                    "2024-04-16 22:30:53.430748",
+                    "2024-04-16 22:37:45.074728",
+                    "2024-04-16 22:52:21.307399",
+                    "2024-04-16 23:05:26.260293"
+                ],
+                "frequency": 6
+            },
+            "click \"Search\" button": {
+                "verb": "click",
+                "element": "<button class=\"search-registry-button button expanded search-registry-button secondary\" type=\"submit\"> search </button>\n",
+                "timestamps": [
+                    "2024-04-16 19:52:26.149352",
+                    "2024-04-16 22:31:10.174348",
+                    "2024-04-16 22:52:34.343263",
+                    "2024-04-16 23:05:46.147100"
+                ],
+                "frequency": 4
+            },
+            "click \"Find a Registry\"": {
+                "verb": "click",
+                "element": "<a class=\"link-rail-item small undecorated-link\" href=\"https://www.macys.com/registry\" target=\"_self\"> gift registry </a>\n",
+                "timestamps": [
+                    "2024-04-16 22:37:20.609571"
+                ],
+                "frequency": 1
+            }
+        },
+        "goals": {
+            "find marriage registry with name JANE DOE": [
+                {
+                    "verb": "click",
+                    "element": "<button type=\"reset\" class=\"bx-button\" aria-label=\"decline offer; close the dialog\">decline offer</button>\n",
+                    "timestamps": [
+                        "2024-04-16 19:03:15.064754"
+                    ],
+                    "frequency": 1
+                }
+            ]
+        }
+    },
+    "shopping.google.com": {
+        "actions": {
+            "type_text search bar": {
+                "verb": "type_text",
+                "element": "<input name=\"q\" type=\"search\" role=\"combobox\" placeholder=\"what are you looking for?\">\n",
+                "timestamps": [
+                    "2024-04-16 21:47:14.926328",
+                    "2024-04-16 22:05:07.302403",
+                    "2024-04-16 22:11:29.518134",
+                    "2024-04-16 22:24:41.676619",
+                    "2024-04-16 22:31:49.601385",
+                    "2024-04-16 22:38:13.358270",
+                    "2024-04-16 22:45:42.769939",
+                    "2024-04-16 22:53:13.026514",
+                    "2024-04-16 23:06:25.112750"
+                ],
+                "frequency": 9
+            },
+            "click \"search button with magnifying glass icon\"": {
+                "verb": "click",
+                "element": "<button type=\"button\" aria-label=\"google search\"></button>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:47:33.920732",
+                    "2024-04-16 22:05:19.982465",
+                    "2024-04-16 22:11:38.802538",
+                    "2024-04-16 22:24:50.994350",
+                    "2024-04-16 22:38:21.211949",
+                    "2024-04-16 22:45:51.254211",
+                    "2024-04-16 22:53:21.984185"
+                ],
+                "frequency": 7
+            },
+            "click on filter option labeled \"Free returns\"": {
+                "verb": "click",
+                "element": "<a>free returns</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:48:29.919290",
+                    "2024-04-16 22:06:26.294300",
+                    "2024-04-16 22:25:07.979940",
+                    "2024-04-16 22:38:37.256658",
+                    "2024-04-16 22:46:10.691611",
+                    "2024-04-16 22:53:38.902686"
+                ],
+                "frequency": 6
+            },
+            "click on the filter option labeled \"On sale\"": {
+                "verb": "click",
+                "element": "<a>on sale</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:06:11.494543"
+                ],
+                "frequency": 1
+            },
+            "click on the first product image that has the label \"Nike Women's Air\"": {
+                "verb": "click",
+                "element": "<a class=\"sh-np__click-target\" target=\"_blank\">nike air max sc women's off white running shoes size 6m 401807 | rack room $59.97 rack room shoes (1,063) 4.5 out of 5 stars. 1,063 product reviews. free returns<img alt=\"\" role=\"presentation\"></a>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:12:31.849409",
+                    "2024-04-16 22:32:00.171317",
+                    "2024-04-16 23:06:33.491210"
+                ],
+                "frequency": 3
+            }
+        },
+        "goals": {
+            "Identify Nike Air Women's size 6 cross training shoes that offer free return.": [
+                {
+                    "verb": "type_text",
+                    "element": "<input name=\"q\" type=\"search\" role=\"combobox\" placeholder=\"what are you looking for?\">\n",
+                    "timestamps": [
+                        "2024-04-16 21:47:14.926368"
+                    ],
+                    "frequency": 1
+                }
+            ]
+        }
+    },
+    "united.com": {
+        "actions": {
+            "click link that says \"Changed bag rules and fees for optional services\"": {
+                "verb": "click",
+                "element": "<a class=\"atm-c-btn--link atm-c-btn--small\" href=\"https://www.united.com/web/en-us/content/travel/baggage/changed-bag-rules-optional-services.aspx\" title=\"changed bag rules\">changed bag rules</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:58:58.465883",
+                    "2024-04-16 23:06:59.048003"
+                ],
+                "frequency": 2
+            },
+            "click the \"Calculate bag fees\" button": {
+                "verb": "click",
+                "element": "<a class=\"atm-c-btn--primary\" href=\"/en/us/baggage-calculator/any-flights\">calculate bag fees</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:50:24.174816",
+                    "2024-04-16 22:07:48.114012",
+                    "2024-04-16 22:14:17.514536",
+                    "2024-04-16 22:21:51.667515",
+                    "2024-04-16 22:26:24.995114",
+                    "2024-04-16 22:32:53.664104",
+                    "2024-04-16 22:39:42.489207",
+                    "2024-04-16 22:47:22.835354",
+                    "2024-04-16 22:59:12.992354",
+                    "2024-04-16 23:07:21.435757"
+                ],
+                "frequency": 10
+            },
+            "click \"View bag charges\" button": {
+                "verb": "click",
+                "element": "<button class=\"app-containers-baggagecalculator-forms-anyflight-styles__breathe--jqhpu atm-c-btn--primary\" type=\"submit\" id=\"anyflightformsubmit\">view bag charges</button>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:14:41.409677",
+                    "2024-04-16 22:47:36.388688"
+                ],
+                "frequency": 2
+            },
+            "type_text in the \"Departure City\" field": {
+                "verb": "type_text",
+                "element": "<input class=\"atm-c-text-input atm-c-textfield__input app-components-autocomplete-atmos-styles__atmostextfieldinput--moar4\" id=\"airport-autocomplete-.from\" type=\"text\" placeholder=\"departure city\" role=\"combobox\" aria-label=\"\" value=\"\">\n",
+                "timestamps": [
+                    "2024-04-16 22:47:52.721558"
+                ],
+                "frequency": 1
+            },
+            "type_text \"Destination City\" field": {
+                "verb": "type_text",
+                "element": "<input class=\"atm-c-text-input atm-c-textfield__input app-components-autocomplete-atmos-styles__atmostextfieldinput--moar4\" id=\"airport-autocomplete-.to\" type=\"text\" placeholder=\"arrival city\" role=\"combobox\" aria-label=\"\" value=\"\">\n",
+                "timestamps": [
+                    "2024-04-16 22:48:08.276073"
+                ],
+                "frequency": 1
+            },
+            "click \"New York, NY, US (JFK)\"": {
+                "verb": "click",
+                "element": "<button class=\"app-components-autocomplete-atmos-styles__autocompleteoption--gddqn\" aria-label=\"new york, ny, us (jfk - kennedy)\" type=\"button\" tabindex=\"-1\">new york , ny, us (jfk)</button>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:48:33.670341",
+                    "2024-04-16 22:48:44.329247"
+                ],
+                "frequency": 2
+            },
+            "click the \"Travel Info\" tab at the top of the page": {
+                "verb": "click",
+                "element": "<a id=\"headernav2\" tabindex=\"-1\" role=\"tab\" class=\"app-components-globalheader-globalheader__expandedtabheader--ibyau\">travel info</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:54:44.740575"
+                ],
+                "frequency": 1
+            }
+        },
+        "goals": {
+            "Open the baggage fee calculator.": [
+                {
+                    "verb": "click",
+                    "element": "<a class=\"atm-c-btn--link atm-c-btn--small\" href=\"https://www.united.com/web/en-us/content/travel/baggage/changed-bag-rules-optional-services.aspx\" title=\"changed bag rules\">changed bag rules</a>\n\n",
+                    "timestamps": [
+                        "2024-04-16 21:50:02.658953"
+                    ],
+                    "frequency": 1
+                }
+            ]
+        }
+    },
+    "healthline.com": {
+        "actions": {
+            "click the search button with magnifying glass icon": {
+                "verb": "click",
+                "element": "<button type=\"submit\" aria-label=\"open healthline search\"></button>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:52:20.377921",
+                    "2024-04-16 22:15:32.046720",
+                    "2024-04-16 22:27:29.596563",
+                    "2024-04-16 22:33:47.878705",
+                    "2024-04-16 22:34:00.501125",
+                    "2024-04-16 22:40:51.405578",
+                    "2024-04-16 22:41:01.281534",
+                    "2024-04-16 22:41:08.818850",
+                    "2024-04-16 22:49:13.898828"
+                ],
+                "frequency": 9
+            },
+            "click on the article titled \"The 10 Best CBD Oils for 2024\"": {
+                "verb": "click",
+                "element": "<a data-event=\"landing page engagement|link click_oils and tinctures_small image listing_1|/health/best-cbd-oil\" href=\"https://www.healthline.com/health/best-cbd-oil\">the 10 best cbd oils for 2024</a>\n",
+                "timestamps": [
+                    "2024-04-16 21:53:07.514236",
+                    "2024-04-16 22:16:02.475783",
+                    "2024-04-16 22:49:46.113180",
+                    "2024-04-16 23:08:42.258489"
+                ],
+                "frequency": 4
+            },
+            "click \"X\" button on the popup window": {
+                "verb": "click",
+                "element": "<button type=\"button\" class=\"icon-hl-close window-close-button\"></button>\n",
+                "timestamps": [
+                    "2024-04-16 22:16:35.967488"
+                ],
+                "frequency": 1
+            }
+        },
+        "goals": {
+            "Browse a list of CBD product reviews.": [
+                {
+                    "verb": "click",
+                    "element": "<button type=\"submit\" aria-label=\"open healthline search\"></button>\n\n",
+                    "timestamps": [
+                        "2024-04-16 21:52:20.377968"
+                    ],
+                    "frequency": 1
+                }
+            ]
+        }
+    },
+    "imdb.com": {
+        "actions": {
+            "click \"Menu\" button on the top left corner": {
+                "verb": "click",
+                "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" tabindex=\"0\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:54:34.031012",
+                    "2024-04-16 22:09:34.716011",
+                    "2024-04-16 22:17:30.858405",
+                    "2024-04-16 22:23:38.102611",
+                    "2024-04-16 22:29:18.470207",
+                    "2024-04-16 22:35:52.068856",
+                    "2024-04-16 22:42:18.733607",
+                    "2024-04-16 23:01:00.349030"
+                ],
+                "frequency": 8
+            },
+            "click \"Top 250 Movies\" link": {
+                "verb": "click",
+                "element": "<a role=\"menuitem\" class=\"ipc-list__item nav-link ipc-list__item--indent-one\" href=\"/chart/top/?ref_=nv_mv_250\" tabindex=\"-1\" aria-disabled=\"false\">top 250 movies</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:54:49.326079",
+                    "2024-04-16 22:09:56.223101",
+                    "2024-04-16 22:17:52.538366",
+                    "2024-04-16 22:23:53.367851",
+                    "2024-04-16 22:29:42.715658",
+                    "2024-04-16 22:36:03.342177",
+                    "2024-04-16 22:42:29.972095",
+                    "2024-04-16 23:01:08.370917",
+                    "2024-04-16 23:10:14.633779"
+                ],
+                "frequency": 9
+            },
+            "click \"Add to Watchlist\" button next to the first movie title": {
+                "verb": "click",
+                "element": "<div class=\"ipc-watchlist-ribbon ipc-focusable ipc-watchlist-ribbon--s ipc-watchlist-ribbon--base ipc-watchlist-ribbon--onimage ipc-poster__watchlist-ribbon\" aria-label=\"add to watchlist\" role=\"button\" tabindex=\"0\"></div>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:57:04.184403",
+                    "2024-04-16 22:18:08.521619"
+                ],
+                "frequency": 2
+            },
+            "click \"Sign in with IMDb\"": {
+                "verb": "click",
+                "element": "<a class=\"list-group-item\">sign in with imdb</a>\n\n",
+                "timestamps": [
+                    "2024-04-16 21:57:21.195671",
+                    "2024-04-16 21:57:53.395262",
+                    "2024-04-16 22:18:23.985022",
+                    "2024-04-16 22:18:52.033447",
+                    "2024-04-16 23:10:46.165564"
+                ],
+                "frequency": 5
+            },
+            "type_text \"Email or mobile phone number text box\"": {
+                "verb": "type_text",
+                "element": "<input type=\"email\" id=\"ap_email\" name=\"email\" tabindex=\"1\" class=\"a-input-text a-span12 auth-autofocus auth-required-field\">\n",
+                "timestamps": [
+                    "2024-04-16 21:57:40.592114",
+                    "2024-04-16 21:57:46.212092",
+                    "2024-04-16 22:18:37.420731",
+                    "2024-04-16 22:18:44.766721",
+                    "2024-04-16 23:10:56.889674"
+                ],
+                "frequency": 5
+            },
+            "click the \"+\" button next to \"1. The Shawshank Redemption\"": {
+                "verb": "click",
+                "element": "<div class=\"ipc-watchlist-ribbon ipc-focusable ipc-watchlist-ribbon--s ipc-watchlist-ribbon--base ipc-watchlist-ribbon--onimage ipc-poster__watchlist-ribbon\" aria-label=\"add to watchlist\" role=\"button\" tabindex=\"0\"></div>\n\n",
+                "timestamps": [
+                    "2024-04-16 22:44:27.202189",
+                    "2024-04-16 23:10:30.559153"
+                ],
+                "frequency": 2
+            },
+            "click the menu button in the top left corner": {
+                "verb": "click",
+                "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" tabindex=\"0\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                "timestamps": [
+                    "2024-04-16 23:10:01.542227"
+                ],
+                "frequency": 1
+            },
+            "type_text [Your password] into the \"Password\" field": {
+                "verb": "type_text",
+                "element": "<input type=\"password\" id=\"ap_password\" name=\"password\" tabindex=\"2\" class=\"a-input-text a-span12 auth-required-field\">\n",
+                "timestamps": [
+                    "2024-04-16 23:11:22.638351",
+                    "2024-04-16 23:12:17.499685"
+                ],
+                "frequency": 2
+            },
+            "click the \"Sign in\" button": {
+                "verb": "click",
+                "element": "<input id=\"signinsubmit\" tabindex=\"5\" class=\"a-button-input\" type=\"submit\">\n",
+                "timestamps": [
+                    "2024-04-16 23:11:34.173173",
+                    "2024-04-16 23:11:41.804616",
+                    "2024-04-16 23:11:48.890058",
+                    "2024-04-16 23:11:54.384915",
+                    "2024-04-16 23:12:03.644959"
+                ],
+                "frequency": 5
+            }
+        },
+        "goals": {
+            "Browse the list of top 250 movies and add the first one to my watchlist.": [
+                {
+                    "verb": "click",
+                    "element": "<label id=\"imdbheader-navdraweropen\" class=\"ipc-responsive-button ipc-btn--theme-basealt ipc-responsive-button--transition-l ipc-btn--on-textprimary ipc-responsive-button--single-padding hamburger__icon\" role=\"button\" tabindex=\"0\" aria-label=\"open navigation drawer\" aria-disabled=\"false\">menu</label>\n\n",
+                    "timestamps": [
+                        "2024-04-16 21:54:34.031048"
+                    ],
+                    "frequency": 1
+                }
+            ]
+        }
+    }
+}

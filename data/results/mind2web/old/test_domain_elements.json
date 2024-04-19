@@ -1,0 +1,14 @@
+{
+    "is_in_interactables": [
+        true,
+        true,
+        false,
+        true
+    ],
+    "is_in_limited_elements": [
+        true,
+        true,
+        false,
+        false
+    ]
+}

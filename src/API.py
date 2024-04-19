@@ -7,9 +7,12 @@ def encode_image(image_path:str):
         return base64.b64encode(image_file.read()).decode('utf-8')
 
 
-def handle_image(user_prompt:str, image_bytes:str=None, image_path:str=None):
+def handle_image(user_prompt:str, image_bytes:str=None, image_path:str=None, encoded=False):
     if image_bytes:
-        base64_image = base64.b64encode(image_bytes).decode('utf-8')
+        if not encoded:
+            base64_image = base64.b64encode(image_bytes).decode('utf-8')
+        else:
+            base64_image = image_bytes
         new_user_prompt = [{'type': 'text', 'text': user_prompt},{'type': 'image_url','image_url': {'url': f'data:image/jpeg;base64,{base64_image}'}}]
         return new_user_prompt
     elif image_path:
@@ -64,7 +67,7 @@ class OpenAIAPI:
                             temperature=self.temperature,
                             presence_penalty=self.presence_penalty,
                             frequency_penalty=self.frequency_penalty,
-                            max_tokens=500)
+                            max_tokens=1500)
                     else:
                         response = openai.ChatCompletion.create(
                             model=self.model,

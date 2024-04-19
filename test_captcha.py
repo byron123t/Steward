@@ -38,31 +38,10 @@ def test_playwright(playwright):
     )
     context.set_default_timeout(6000)
     page = context.new_page()
-    print(context.pages)
-    html, interactables, traffic = exploration(context, page, 'https://rtcl.eecs.umich.edu/rtclweb/people/')
+    html, interactables, traffic = exploration(context, page, 'https://nopecha.com/demo/textcaptcha')
     flattened_interactables = process_interactables(interactables)
-    print(context.pages)
     # html, interactables, traffic = interact(flattened_interactables[15], page, click, PATH_NUM=None)
-    html, interactables, traffic, _, opened_new_tab = interact_new_page(context, flattened_interactables[15], page, click, PATH_NUM=None)
-    flattened_interactables = process_interactables(interactables)
-    print(context.pages)
-    print(flattened_interactables[6].evaluate("el => el.outerHTML", timeout=500))
-    html, interactables, traffic, new_page, _ = interact_new_page(context, flattened_interactables[6], page, click, PATH_NUM=None)
-    new_flattened_interactables = process_interactables(interactables)
-    print(context.pages)
-    print(flattened_interactables[4].evaluate("el => el.outerHTML", timeout=500))
-    html, interactables, traffic = interact(flattened_interactables[4], page, click, PATH_NUM=None)
-    print(flattened_interactables[10].evaluate("el => el.outerHTML", timeout=500))
-    html, interactables, traffic = interact(new_flattened_interactables[10], new_page, click, PATH_NUM=None)
-    # newnewpage = context.new_page()
-    with context.expect_page() as new:
-        page.evaluate("window.open('https://www.google.com')")
-        page2 = new.value
-    page.bring_to_front()
-    sleep(2)
-    print(context.pages)
-    page2.bring_to_front()
-    sleep(5)
-    
+
+
 with sync_playwright() as playwright:
     test_playwright(playwright)

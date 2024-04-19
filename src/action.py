@@ -5,6 +5,9 @@ from ast import Str
 from pickle import NEWTRUE
 import os
 from difflib import get_close_matches
+from PIL import Image
+from io import BytesIO
+from bs4 import BeautifulSoup
 from playwright.sync_api import Page, expect, sync_playwright, Locator
 
 
@@ -38,13 +41,13 @@ class Network:
 
     def get_traffic(self):
         return self.network_traffic
-    
+
 
 def check_file_length(path, filename):
     max_len = os.statvfs(path).f_namemax
     ext = filename.split('.')[-1]
     if len(filename) > max_len:
-        return filename[:max_len - 10] + ext
+        return filename[:max_len - 10] + '.' + ext
     return filename
 
 
@@ -58,7 +61,10 @@ def check_and_open_file(path, url, ext='csv', mode='w', PATH_NUM=None):
 
 
 def type_text(interactable: Locator=None, text: Str=None, delay: float=0.147):
-    interactable.type(text, delay=delay)
+    try:
+        interactable.fill(text)
+    except Exception as e:
+        interactable.type(text, delay=delay)
 
 
 def type_submit(interactable: Locator=None, text: Str=None, delay: float=0.147):
@@ -143,16 +149,24 @@ def upload_file(page: Page=None, interactable: Locator=None, file=None):
 
 
 def screenshot(page: Page, PATH_NUM=None, save=True):
+
     path = 'data/screenshots/'
     if PATH_NUM:
         filename = '{}{}.jpeg'.format(page.url.replace('/', '-|slash|-'), PATH_NUM)
     else:
         filename = '{}.jpeg'.format(page.url.replace('/', '-|slash|-'))
     filename = check_file_length(path, filename)
+    try:
+        page.wait_for_load_state('networkidle', timeout=500)
+        page.wait_for_load_state('domcontentloaded', timeout=500)
+    except Exception as e:
+        pass
+    screenshot_bytes = page.screenshot(full_page=True)
+    im = Image.open(BytesIO(screenshot_bytes)).convert('RGB')
+    im = im.crop((0, 0, 1280, 950))
     if save:
-        screenshot_bytes = page.screenshot(path=os.path.join(path, filename))
-    else:
-        screenshot_bytes = page.screenshot()
+        im.save(os.path.join(path, filename))
+    screenshot_bytes = open(os.path.join(path, filename), 'rb').read()
     return os.path.join(path, filename), screenshot_bytes
 
 
@@ -228,31 +242,20 @@ def interact(tag, page: Page, action, PATH_NUM, param2=None):
         page.wait_for_load_state('domcontentloaded', timeout=5000)
     except Exception as e:
         pass
-    # screenshot(page, PATH_NUM)
     return get_html(page), get_all_interactables(page), network.get_traffic()
 
 
 def interact_new_page(context, tag, page: Page, action, PATH_NUM, param2=None):
-    try:
-        with context.expect_page() as new_page_info:
-            if action == type_text or action == drag or action == type_submit or action == check or action == select or action == exploration or action == upload_file:
-                action(tag, param2)
-            elif action == click:
-                action(page, tag)
-            else:
-                action(tag)
-        new_page = new_page_info.value
-        network = Network(new_page)
-    except Exception as e:
-        with context.expect_page() as new_page_info:
-            if action == type_text or action == drag or action == type_submit or action == check or action == select or action == exploration or action == upload_file:
-                action(tag, param2)
-            elif action == click:
-                action(page, tag)
-            else:
-                action(tag)
-        new_page = new_page_info.value
-        network = Network(new_page)
+    # try:
+    with context.expect_page() as new_page_info:
+        if action == type_text or action == drag or action == type_submit or action == check or action == select or action == exploration or action == upload_file:
+            action(tag, param2)
+        elif action == click:
+            action(page, tag)
+        else:
+            action(tag)
+    new_page = new_page_info.value
+    network = Network(new_page)
     try:
         new_page.wait_for_load_state('networkidle')
     except Exception as e:
@@ -261,12 +264,56 @@ def interact_new_page(context, tag, page: Page, action, PATH_NUM, param2=None):
         new_page.wait_for_load_state('domcontentloaded')
     except Exception as e:
         new_page.wait_for_load_state('domcontentloaded')
-    # screenshot(new_page, PATH_NUM)
-    return get_html(new_page), get_all_interactables(new_page), network.get_traffic(), new_page
+    return get_html(new_page), get_all_interactables(new_page), network.get_traffic(), new_page, True
+    # except Exception as e:
+    #     network = Network(page)
+    #     try:
+    #         page.wait_for_load_state('networkidle', timeout=5000)
+    #     except Exception as e:
+    #         pass
+    #     try:
+    #         page.wait_for_load_state('domcontentloaded', timeout=5000)
+    #     except Exception as e:
+    #         pass
+    #     return get_html(page), get_all_interactables(page), network.get_traffic(), page, False
 
 
 def get_html(page: Page):
     return page.content()
+
+
+def generate_playwright_locator(html_element: str):
+    soup = BeautifulSoup(html_element, 'html.parser')
+    element = soup.contents[0]
+    selector = f'{element.name}'
+    if element.name is None:
+        element = element.next_element
+    if element.get('id'):
+        return f'{selector}[id*=\"{element.get("id")}\" i]'
+    # if element.get_text():
+    #     return f"{selector}:has-text({element.get_text()}) i"
+    if element.get('href'):
+        return f'{selector}[href*=\"{element.get("href")}\" i]'
+    if element.get('aria-label'):
+        return f'{selector}[aria-label*=\"{element.get("aria-label")}\" i]'
+    if element.get('name'):
+        return f'{selector}[name*=\"{element.get("name")}\" i]'
+    if element.get('class'):
+        class_list = element.get('class')
+        return f'{selector}[class*=\"{class_list[0]}\" i]'
+    if element.get('value'):
+        return f'{selector}[value*=\"{element.get("value")}\" i]'
+    if element.get('role'):
+        return f'{selector}[role*=\"{element.get("role")}\" i]'
+    return selector
+
+
+def get_interactable(page: Page, html_element: str):
+    locator_string = generate_playwright_locator(html_element)
+    print(locator_string)
+    interactable = page.locator(locator_string)
+    print(interactable)
+    return [interactable]
 
 
 def get_all_interactables(page: Page):
@@ -284,11 +331,32 @@ def get_all_interactables(page: Page):
     interactables.append(page.locator('[role*="{}"]:visible'.format('textbox')))
     interactables.append(page.locator('[role*="{}"]:visible'.format('link')))
     interactables.append(page.locator('[role*="{}"]:visible'.format('menuitem')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('menu')))
     interactables.append(page.locator('[role*="{}"]:visible'.format('tabpanel')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('combobox')))
+    interactables.append(page.locator('[role*="{}"]:visible'.format('select')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('radio')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('option')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('checkbox')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('button')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('textbox')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('menuitem')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('menu')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('tabpanel')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('combobox')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('select')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('suggestion')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('search-bar')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('search-result')))
+    interactables.append(page.locator('[class*="{}"]:visible'.format('toggle')))
     interactables.append(page.locator('[onclick]:visible'))
     interactables.append(page.locator('[href]:visible'))
     interactables.append(page.locator('[aria-controls]:visible'))
     interactables.append(page.locator('[aria-label]:visible'))
+    interactables.append(page.locator('[aria-labelledby]:visible'))
+    interactables.append(page.locator('[aria-haspopup]:visible'))
+    interactables.append(page.locator('[aria-owns]:visible'))
+    interactables.append(page.locator('[aria-selected]:visible'))
     
     return interactables
 
