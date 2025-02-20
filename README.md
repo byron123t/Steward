@@ -8,6 +8,7 @@ Using python version 3.9.18 and conda
 conda create -n steward python=3.9
 conda activate steward
 pip install -r requirements.txt
+pip install -e .
 ```
 Run `playwright install`
 
