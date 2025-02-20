@@ -22,7 +22,7 @@ def handle_image(user_prompt:str, image_bytes:str=None, image_path:str=None, enc
 
 
 class OpenAIAPI:
-    def __init__(self, model:str='gpt-3.5-turbo', mode:str='openai', max_tries:int=5, temperature:float=1, presence_penalty:float=0, frequency_penalty:float=0, verbose:bool=False):
+    def __init__(self, model:str='gpt-4o-mini', mode:str='openai', max_tries:int=5, temperature:float=1, presence_penalty:float=0, frequency_penalty:float=0, verbose:bool=False):
         self.mode = mode
         self.model = model
         self.verbose = verbose

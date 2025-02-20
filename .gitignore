@@ -2,6 +2,5 @@
 *.mov
 __pycache__/
 *.jpeg
-sensitive.py
 steward.egg-info/
 

@@ -30,10 +30,10 @@ global OAI_MAKES_SENSE
 global OAI_END_STATE
 global OAI_IMAGE
 global ENCODING
-OAI = OpenAIAPI(model='gpt-3.5-turbo-1106')
+OAI = OpenAIAPI(model='gpt-4o-mini')
 # OAI_LONG = OpenAIAPI(model='gpt-3.5-turbo-16k')
-OAI_GOOD = OpenAIAPI(model='gpt-4-1106-preview')
-OAI_IMAGE = OpenAIAPI(model='gpt-4-vision-preview')
+OAI_GOOD = OpenAIAPI(model='gpt-o3-mini')
+OAI_IMAGE = OpenAIAPI(model='gpt-4o')
 OAI_MAKES_SENSE = OpenAIAPI(model='ft:gpt-3.5-turbo-0613:MODEL_NAME_HERE')
 OAI_END_STATE = OpenAIAPI(model='ft:gpt-3.5-turbo-0613:MODEL_NAME_HERE')
 ENCODING = tiktoken.encoding_for_model('gpt-3.5-turbo-16k')
@@ -882,9 +882,9 @@ if __name__ == '__main__':
     parser.add_argument('--task', type=str, default='', help='')
     parser.add_argument('--auth', action='store_true')
     parser.add_argument('--max-tokens', type=int, default=12000, help='')
-    parser.add_argument('--model', type=str, choices=['gpt-3.5-turbo', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo-16k', 'gpt-4', 'gpt-4-1106-preview', 'gpt-3.5-turbo-1106'], default='gpt-3.5-turbo', help='')
-    parser.add_argument('--model-long', type=str, choices=['gpt-3.5-turbo', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo-16k', 'gpt-4'], default='gpt-3.5-turbo-16k', help='')
-    parser.add_argument('--model-good', type=str, choices=['gpt-3.5-turbo', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo-16k', 'gpt-4'], default='gpt-4', help='')
+    parser.add_argument('--model', type=str, default='gpt-4o-mini', help='')
+    parser.add_argument('--model-long', type=str, default='gpt-4o-mini', help='')
+    parser.add_argument('--model-good', type=str, default='gpt-o3-mini', help='')
     parser.add_argument('--verbose', action='store_true', help='')
     args = parser.parse_args()
 

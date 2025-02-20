@@ -143,7 +143,7 @@ global OAI_LONG
 global OAI_GOOD
 global ENCODING
 global EXIT_BOOL
-OAI = OpenAIAPI(model='gpt-3.5-turbo', mode='azure')
+OAI = OpenAIAPI(model='gpt-4o-mini', mode='azure')
 OAI_LONG = OpenAIAPI(model='gpt-3.5-turbo-16k', mode='azure')
 OAI_GOOD = OpenAIAPI(model='gpt-4')
 ENCODING = tiktoken.encoding_for_model('gpt-3.5-turbo-16k')
